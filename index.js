@@ -35,6 +35,45 @@ app.get('/data/contacts/:id', (req, res) => {
   });
 
 //  Creates one thing
+app.post('/data/contacts', (req, res) => {
+    const length = contacts.length;
+    const newPerson = {
+      id: length + 1,
+      ...req.body
+    }
+    contacts.push(newPerson)
+    res.json(contacts)
+  })
+
+  app.post('/data/vehicles', (req, res) => {
+    const length = vehicles.length;
+    const newAdd = {
+      id: length + 1,
+      ...req.body
+    }
+    vehicles.push(newAdd)
+    res.json(vehicles)
+  })
+
+  app.post('/data/comments', (req, res) => {
+    const length = comments.length;
+    const newAddition = {
+      id: length + 1,
+      ...req.body
+    }
+    comments.push(newAddition)
+    res.json(comments)
+  })
+
+  app.post('/data/products', (req, res) => {
+    const length = products.length;
+    const newThing = {
+      id: length + 1,
+      ...req.body
+    }
+    products.push(newThing)
+    res.json(products)
+  })
 
 
 
